@@ -15,24 +15,26 @@ class Header extends Component {
 		}
 
 		return (
-			<ul className="nav navbar-nav">
+			<ul className="nav navbar-nav nav-tabs">
 				<li className="nav-item">
-					<Link to="signin">Sign up</Link>
+					<Link to="signin" className="nav-link">Sign up</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="signin">Sign in</Link>
+					<Link to="signin" className="nav-link">Sign in</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="dashboard">Dashboard</Link>
+					<Link to="dashboard" className="nav-link active">Dashboard</Link>
 				</li>
 			</ul>
 		);
 	}
 	render() {
 		return (
-			<nav className="navbar navbar-light">
-				{this.renderLinks()}
-			</nav>
+			<div>
+				<nav className="navbar navbar-light" >
+					{this.renderLinks()}
+				</nav>
+			</div>
 		);
 	}
 }
