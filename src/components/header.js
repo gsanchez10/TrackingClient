@@ -22,6 +22,9 @@ class Header extends Component {
 				<li className="nav-item">
 					<Link to="signin">Sign in</Link>
 				</li>
+				<li className="nav-item">
+					<Link to="dashboard">Dashboard</Link>
+				</li>
 			</ul>
 		);
 	}
