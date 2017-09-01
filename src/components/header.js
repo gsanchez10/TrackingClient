@@ -15,15 +15,15 @@ class Header extends Component {
 		}
 
 		return (
-			<ul className="nav navbar-nav nav-tabs">
+			<ul className="nav nav-pills">
 				<li className="nav-item">
 					<Link to="signin" className="nav-link">Sign up</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="signin" className="nav-link">Sign in</Link>
+					<Link to="signin" className="nav-link ">Sign in</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="dashboard" className="nav-link active">Dashboard</Link>
+					<Link to="dashboard" className="nav-link active btn btn-primary">Dashboard</Link>
 				</li>
 			</ul>
 		);
@@ -31,7 +31,12 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
-				<nav className="navbar navbar-light" >
+				<nav className="navbar navbar-default" >
+					<nav className="navbar navbar-inverse">
+					    <div className="navbar-header">
+							<a className="navbar-brand" href="#"><img src="img/logo.png" style={{height:'30px'}}/></a>
+						</div>
+					</nav>
 					{this.renderLinks()}
 				</nav>
 			</div>
