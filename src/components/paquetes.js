@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { browserHistory } from 'react-router';
 
 import 'react-table/react-table.css';
 
-class Dashboard extends Component {
+class Paquetes extends Component {
 	componentWillMount() {
 		this.props.getPacks();
-	}
-	handleClick(event) {
-		console.log("adsf", event.dispatchMarker);
 	}
 
 	render() {
@@ -26,6 +24,7 @@ class Dashboard extends Component {
 	                console.log('It was in this column:', column)
 	                console.log('It was in this row:', rowInfo)
 	                console.log('It was in this table instance:', instance)
+	                browserHistory.push('/paquetes/' + rowInfo.original.id);
 
 	                // IMPORTANT! React-Table uses onClick internally to trigger
 	                // events like expanding SubComponents and pivots.
@@ -65,9 +64,10 @@ class Dashboard extends Component {
 	              accessor: "charges"
 	            }
 	          ]}
-	          defaultPageSize={10}
+	          defaultPageSize={3}
 	          className="-striped -highlight"
 	        />
+	        {this.props.children}
 			</div>
 		);
 	}
@@ -79,4 +79,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, actions)(Dashboard);
+export default connect(mapStateToProps, actions)(Paquetes);
